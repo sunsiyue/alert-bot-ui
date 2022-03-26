@@ -2,6 +2,7 @@ import React from "react";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/table/lib/css/table.css";
 import { Column, Cell, Table2 } from "@blueprintjs/table";
+import shortenNumber from "../utils/numbers.js"
 
 class CoinTable extends React.Component {
   constructor(props) {
@@ -54,10 +55,10 @@ class CoinTable extends React.Component {
       return <Cell>{this.state.data[index].oneDayOver30Days.toFixed(2)}</Cell>;
     };
     const volColumnRenderer = (index) => {
-      return <Cell>{this.state.data[index].vol24hr.toFixed(2)}</Cell>;
+      return <Cell>{shortenNumber(this.state.data[index].vol24hr)}</Cell>;
     };
     const monthVolColumnRenderer = (index) => {
-      return <Cell>{this.state.data[index].vol30Days.toFixed(2)}</Cell>;
+      return <Cell>{shortenNumber(this.state.data[index].vol30Days)}</Cell>;
     };
     const dayPriceChangeColumnRenderer = (index) => {
       return <Cell>{this.state.data[index].change24hr.toFixed(2)}%</Cell>;
@@ -75,8 +76,8 @@ class CoinTable extends React.Component {
         <Table2 numRows={numRows}>
           <Column name="Coin" cellRenderer={symbolColumnRenderer} />
           <Column name="Heat score" cellRenderer={heatColumnRenderer} />
-          <Column name="24hr vol" cellRenderer={volColumnRenderer} />
-          <Column name="30d vol" cellRenderer={monthVolColumnRenderer} />
+          <Column name="24hr vol[$$]" cellRenderer={volColumnRenderer} />
+          <Column name="30d vol[$$]" cellRenderer={monthVolColumnRenderer} />
           <Column name="24hr $Δ" cellRenderer={dayPriceChangeColumnRenderer} />
           <Column name="last $" cellRenderer={lastPriceChangeColumnRenderer} />
         </Table2>
