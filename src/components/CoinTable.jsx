@@ -63,7 +63,7 @@ class CoinTable extends React.Component {
       return <Cell>{this.state.data[index].change24hr.toFixed(2)}%</Cell>;
     };
     const lastPriceChangeColumnRenderer = (index) => {
-      return <Cell>{this.state.data[index].lastPrice.toFixed(2)}</Cell>;
+      return <Cell>{this.state.data[index].lastPrice}</Cell>;
     };
     return (
       <div>
