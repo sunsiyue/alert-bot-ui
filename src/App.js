@@ -1,7 +1,5 @@
 import React from "react";
-import Timer from "./components/Cointable";
-
-import CoinTable from "./components/Cointable";
+import CoinTable from "./components/CoinTable";
 
 function App() {
   return (
