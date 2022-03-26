@@ -46,7 +46,7 @@ class CoinTable extends React.Component {
   }
 
   render() {
-    // Sample Column data
+    const numRows = this.state.data.length;
     const symbolColumnRenderer = (index) => {
       return <Cell>{this.state.data[index].symbol}</Cell>;
     };
@@ -69,10 +69,10 @@ class CoinTable extends React.Component {
       <div>
         <div></div>
         <div>
-          Length: [{this.state.data.length}] | Last Update:[
+          Length: [{numRows}] | Last Update:[
           {this.state.lastUpdate}]
         </div>
-        <Table2 numRows={this.state.data.length}>
+        <Table2 numRows={numRows}>
           <Column name="Coin" cellRenderer={symbolColumnRenderer} />
           <Column name="Heat score" cellRenderer={heatColumnRenderer} />
           <Column name="24hr vol" cellRenderer={volColumnRenderer} />

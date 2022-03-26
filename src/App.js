@@ -3,7 +3,7 @@ import CoinTable from "./components/CoinTable";
 
 function App() {
   return (
-    <div style={{ display: "block", padding: 30 }}>
+    <div style={{ height: "100%", padding: 30 }}>
       <h4>Hot coins from Kucoin</h4>
       <CoinTable />
     </div>
