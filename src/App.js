@@ -1,5 +1,5 @@
 import React from "react";
-import CoinTable from "./components/CoinTable.jsx";
+import CoinTable from "./components/CoinTable";
 
 function App() {
   return (
