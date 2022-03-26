@@ -49,7 +49,7 @@ class CoinTable extends React.Component {
   render() {
     const numRows = this.state.data.length;
     const symbolColumnRenderer = (index) => {
-      return <Cell>{this.state.data[index].symbol}</Cell>;
+      return <Cell><b>{this.state.data[index].symbol}</b></Cell>;
     };
     const heatColumnRenderer = (index) => {
       return <Cell>{this.state.data[index].oneDayOver30Days.toFixed(2)}</Cell>;
