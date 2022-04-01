@@ -1,6 +1,7 @@
 import React from "react";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/table/lib/css/table.css";
+import { Colors } from "@blueprintjs/core";
 import { Column, Cell, Table2 } from "@blueprintjs/table";
 import shortenNumber from "../utils/numbers.js"
 
@@ -52,7 +53,7 @@ class CoinTable extends React.Component {
       return <Cell><b>{this.state.data[index].symbol}</b></Cell>;
     };
     const heatColumnRenderer = (index) => {
-      return <Cell style={{backgroundColor: this.state.data[index].oneDayOver30Days > 1.5 ? "#93c47d" : "white"}}><b>{this.state.data[index].oneDayOver30Days.toFixed(2)}</b></Cell>;
+      return <Cell style={{backgroundColor: this.state.data[index].oneDayOver30Days > 1.5 ? Colors.GREEN5 : Colors.WHITE}}><b>{this.state.data[index].oneDayOver30Days.toFixed(2)}</b></Cell>;
     };
     const volColumnRenderer = (index) => {
       return <Cell>{shortenNumber(this.state.data[index].vol24hr)}</Cell>;
@@ -61,7 +62,7 @@ class CoinTable extends React.Component {
       return <Cell>{shortenNumber(this.state.data[index].vol30Days)}</Cell>;
     };
     const dayPriceChangeColumnRenderer = (index) => {
-      return <Cell style={{backgroundColor: this.state.data[index].change24hr > 10 ? "#93c47d" : "white"}}>{this.state.data[index].change24hr.toFixed(2)}%</Cell>;
+      return <Cell style={{backgroundColor: this.state.data[index].change24hr > 10 ? Colors.GREEN5 : Colors.WHITE}}>{this.state.data[index].change24hr.toFixed(2)}%</Cell>;
     };
     const lastPriceChangeColumnRenderer = (index) => {
       return <Cell>{this.state.data[index].lastPrice}</Cell>;
