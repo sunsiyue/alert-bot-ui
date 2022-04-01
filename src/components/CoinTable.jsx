@@ -73,6 +73,7 @@ class CoinTable extends React.Component {
           Length: [{numRows}] | Last Update:[
           {this.state.lastUpdate}]
         </div>
+        <div style={{height: "800px"}}>
         <Table2 numRows={numRows}>
           <Column name="Coin" cellRenderer={symbolColumnRenderer} />
           <Column name="Heat score" cellRenderer={heatColumnRenderer} />
@@ -81,6 +82,7 @@ class CoinTable extends React.Component {
           <Column name="24hr $Δ" cellRenderer={dayPriceChangeColumnRenderer} />
           <Column name="last $" cellRenderer={lastPriceChangeColumnRenderer} />
         </Table2>
+        </div>
       </div>
     );
   }
