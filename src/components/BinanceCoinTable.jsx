@@ -53,7 +53,7 @@ class BinanceCoinTable extends React.Component {
       return <Cell><b>{this.state.data[index].symbol}</b></Cell>;
     };
     const heatColumnRenderer = (index) => {
-      return <Cell style={{backgroundColor: this.state.data[index].oneDayOver30Days > 1.5 ? Colors.GREEN5 : Colors.WHITE}}><b>{this.state.data[index].oneDayOver30Days.toFixed(2)}</b></Cell>;
+      return <Cell style={{backgroundColor: this.state.data[index].oneDayOver30Days > 1.5 ? Colors.GREEN5 : Colors.WHITE}}><b>{this.state.data[index].oneDayOver30Days}</b></Cell>;
     };
     const volColumnRenderer = (index) => {
       return <Cell>{shortenNumber(this.state.data[index].vol24hr)}</Cell>;
